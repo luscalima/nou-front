@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { HTMLAttributes } from 'vue'
+import type { Component, HTMLAttributes } from 'vue'
 import { Primitive, type PrimitiveProps } from 'radix-vue'
 import { type ButtonVariants, buttonVariants } from '.'
 import { cn } from '@/lib/utils'
@@ -10,6 +10,7 @@ interface Props extends PrimitiveProps {
   as?: string
   class?: HTMLAttributes['class']
   rounded?: boolean
+  icon?: Component
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -25,5 +26,8 @@ const props = withDefaults(defineProps<Props>(), {
     :class="cn(buttonVariants({ variant, size, rounded }), props.class)"
   >
     <slot />
+    <template v-if="icon">
+      <icon size="16" />
+    </template>
   </Primitive>
 </template>
