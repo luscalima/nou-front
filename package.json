@@ -15,7 +15,9 @@
   },
   "dependencies": {
     "@phosphor-icons/vue": "^2.1.6",
+    "@tanstack/vue-query": "^5.24.1",
     "@tanstack/vue-table": "^8.12.0",
+    "@vueuse/core": "^10.8.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "lucide-vue-next": "^0.323.0",
